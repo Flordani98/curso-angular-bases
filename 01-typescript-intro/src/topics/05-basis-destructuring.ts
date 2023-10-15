@@ -41,7 +41,12 @@ const audioPlayer: AudioPlayer = {
 // console.log("Duration: ", duration);
 // console.log("author: ", author);
 
+//DESTRUCTURACION DE ARREGLOS
 
+const [, p2, trunks = 'Not found']: string[] = ['Goku', 'Vegeta', 'Trunks'];
+
+
+console.error('Personaje 3:', trunks);
 
 
 
