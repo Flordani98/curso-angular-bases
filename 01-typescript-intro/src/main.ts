@@ -5,7 +5,8 @@ import './style.css' //cuando utilizamos el import, es requerir un modulo, un mo
 // import "./topics/03-functions"
 // import "./topics/04-homeworks-types"
 // import "./topics/05-basis-destructuring"
-import "./topics/06-function-destructuring"
+// import "./topics/06-function-destructuring"
+import "./topics/07-import-export"
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 Hola mundo!!!
 `
