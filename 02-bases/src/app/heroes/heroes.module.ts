@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule } from "@angular/common"; //*para utilizar las directivas ngIf ngFor, ademas hay que importarla
 import { HeroComponent } from "./hero/hero.component";
 import { ListComponent } from "./list/list.component";
 
