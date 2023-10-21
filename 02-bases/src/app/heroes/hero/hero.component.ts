@@ -8,4 +8,27 @@ import { Component } from '@angular/core';
 export class HeroComponent {
   public name: string = "iron man";
   public age: number = 45;
+
+  get capitalizedName(): string{
+    return this.name.toUpperCase();
+  }
+
+  getheroDescription(): string{
+    return `${this.name} - ${this.age}`;
+  }
+
+  changeHero(): void{
+    // throw 'Metodo no implementado'
+    this.name = 'Spider man';
+
+  }
+
+  changeAge() {
+    this.age = 25;
+
+  }
+  resetForm():void{
+      this.name = 'ironman';
+      this.age = 45;
+  }
 }
