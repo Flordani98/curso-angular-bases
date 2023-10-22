@@ -8,8 +8,11 @@
         let isEven = even;
         let isOdd = odd;
         "
-
-        class="list-group-item" >
+        
+        class="list-group-item" 
+        [ngClass] = "{'list-group-item-dark': isLast,
+                    'list-group-item-primary': isEven}"><!--solo al ultimo elemento se le va aplicar la clase dark,
+                         y los pares la clase ligth--> 
        
         <span class="text-primary">{{i +1}} . </span>
         
