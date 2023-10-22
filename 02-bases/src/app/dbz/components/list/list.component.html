@@ -1,0 +1,27 @@
+<h4>Listado</h4>
+<ul class="list-group"> <!--la palabra index es un objeto que ya esta siendo definido por el ngFor por defecto-->
+    <li *ngFor="
+        let character of characterList;
+        let i = index;
+        let isFirst = first;
+        let isLast = last;
+        let isEven = even;
+        let isOdd = odd;
+        "
+
+        class="list-group-item" >
+       
+        <span class="text-primary">{{i +1}} . </span>
+        
+        <span>{{character.name}} - </span> 
+        <strong>Power: </strong>
+        <span>{{ character.power }} </span>
+
+        <br>
+        <!-- <span>Es par: {{isEven}} <br></span>
+        <span>Es impar: {{isOdd}}<br></span>
+        <span>Es el primero: {{isFirst}} <br></span>
+        <span>Es el ultimo: {{isLast}} <br></span> -->
+
+    </li>
+</ul>   
