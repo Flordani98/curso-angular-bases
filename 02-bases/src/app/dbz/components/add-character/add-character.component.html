@@ -1,9 +1,22 @@
 <h4>Agregar Personaje</h4>
         
-<form class="row">
-    <input type="text" class="form-control mb-2" placeholder="Nombre">
-    <input type="number" class="form-control mb-2"  placeholder="Poder">
-    <button class ="btn btn-primary" type="submit">
+<form class="row" (ngSubmit)="emitCharacter()"> <!--ngSubmit: es un evento especial de angular, que evita la propagación, q se recargue la pag cuando se envia un form entre otras cosas-->
+
+    <input type="text"  [(ngModel)] ="character.name" name="name" class="form-control mb-2" placeholder="Nombre">
+
+    <input type="number" [(ngModel)] ="character.power" name="power" class="form-control mb-2"  placeholder="Poder">
+
+    <button class ="btn btn-primary" type="submit" (click)="emitCharacter()">
         Agregar
     </button>
+
+    <!-- <pre>{{character | json }}</pre> -->
+    
+    <!--@output: emitir eventos al componente padre-->
+
+    <!--Two way data binding: si en el componente de ts hago una modificacion al por ej. el name, entonces el
+    template(html) tambien se va actualizar y reflejar ese name, Y si en el template se hace una modificacion
+    a esa misma variable TAMBIEN se va a modificar en el TS
+    *No se recomienda utilizarlo para manejo de formularios
+    con el [()]: asociamos un evento y un atributo al mismo tiempo (caja de bananas)-->
 </form>

@@ -9,17 +9,19 @@
         let isOdd = odd;
         "
         
-        class="list-group-item" 
+        class="list-group-item d-flex justify-content-between align-items-center" 
         [ngClass] = "{'list-group-item-dark': isLast,
                     'list-group-item-primary': isEven}"><!--solo al ultimo elemento se le va aplicar la clase dark,
                          y los pares la clase ligth--> 
        
-        <span class="text-primary">{{i +1}} . </span>
-        
-        <span>{{character.name}} - </span> 
-        <strong>Power: </strong>
-        <span>{{ character.power }} </span>
+        <div>
+            <span class="text-primary">{{i +1}} . </span>
+            <span>{{character.name}} - </span> 
+            <strong>Power: </strong>
+            <span>{{ character.power }}</span>
 
+        </div>     
+        <button (click)="onDeleteCharacter(i)" class="btn btn-danger">X</button>
         <br>
         <!-- <span>Es par: {{isEven}} <br></span>
         <span>Es impar: {{isOdd}}<br></span>

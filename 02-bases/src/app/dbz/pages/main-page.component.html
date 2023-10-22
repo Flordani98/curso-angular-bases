@@ -5,13 +5,16 @@
 <div class="row">
     <div class="col">
 
-    <dbz-list [characterList]="characters"></dbz-list> <!--desde aca mando el arreglo del componente padre al hijo-->
+    <dbz-list [characterList]="characters" (deletedCharacter)="onDeleteCharacter($event)" ></dbz-list> <!--desde aca mando el arreglo del componente padre al hijo-->
      
     </div>
 
     <div class="col">
 
-        <dbz-add-character></dbz-add-character>
+        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character> <!--emito un evento desde el hijo al padre
+        cuando el component addcharacter me devuelva un personaje yo tengo que insertarlo en el main page .ts, q es
+    donde se encuentran todos los personajes
+    $event: para recibir un objeto-->
      
     </div>
 </div>
