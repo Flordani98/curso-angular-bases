@@ -1,2 +1,3 @@
 <h5> Buscar:</h5>
-<input type="text" class="form-control" placeholder="Buscar gifs...">
+<!-- <input type="text" class="form-control" placeholder="Buscar gifs..." (keyup)="searchTag(txtTagInput.value)" #txtTagInput> keyup: evento para cuando levanto la tecla -->
+<input type="text" class="form-control" placeholder="Buscar gifs..." (keyup.enter)="searchTag()" #txtTagInput> <!--keyupenter: evento para cuando presiono/levanto la tecla ENTER-->

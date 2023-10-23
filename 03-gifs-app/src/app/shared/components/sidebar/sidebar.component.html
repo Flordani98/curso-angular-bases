@@ -3,6 +3,9 @@
     <hr class="text-white">
 
     <div class="list-group list-reset">
-        <button class="list-group list-group-item-action">Valorant</button>
+
+        <button *ngFor="let tag of tags" class="list-group list-group-item-action">
+            {{tag | titlecase}} <!--pipe "|": no modifica el dato real, solo transforma de manera visual-->
+        </button>
     </div>
 </div>
