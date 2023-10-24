@@ -4,7 +4,12 @@
     </div>
     <div class="col-12 pt-2">
 
-        <gifs-card-list></gifs-card-list>
+        <gifs-card-list [gifs]="gifs"></gifs-card-list> 
+        <!--[xx] : lo que se encuentra en los corchetes[] es el nombre del atributo q se encuentra en card list, el cual recibira
+            el objeto que se pasara desde homepage.ts
+            "xxx": el valor que se pasa, es el atributo que se encuentra en home-page el cual consume el servicio de la API
+            
+    -->
 
     </div>
 </div>
