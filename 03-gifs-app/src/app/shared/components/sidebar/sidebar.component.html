@@ -4,8 +4,10 @@
 
     <div class="list-group list-reset">
 
-        <button *ngFor="let tag of tags" class="list-group list-group-item-action">
+        <button (click)="searchTag(tag)" *ngFor="let tag of tags" class="list-group list-group-item-action">
             {{tag | titlecase}} <!--pipe "|": no modifica el dato real, solo transforma de manera visual-->
         </button>
+
+        <!--(click)="lance busqueda con ese tag, tengo q pasar el (tag) VER: resolucion de la tarea DEVTALLES"-->
     </div>
 </div>

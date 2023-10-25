@@ -18,7 +18,11 @@ export class GifsService {
   private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
 
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.loadLocalStorage(); //cuando mi servicio sea inyectado la primera vez se va a cargar el local storage
+    console.log('Gifs service ready');
+
+  }
 
 
   get tagsHistory(){
@@ -35,7 +39,25 @@ export class GifsService {
     this._tagsHistory.unshift(tag);
     this._tagsHistory = this.tagsHistory.splice(0,10);
 
+    this.saveLocalStorage(); //cada vez q se agrega un tag, se guarda en el local storage
   }
+
+  //*metodo para guardar en el local storage
+  private saveLocalStorage(): void{
+    localStorage.setItem('history', JSON.stringify( this._tagsHistory)); //pasa a un (1) string todo los tags
+  }
+
+  //*para cargar el localStorage
+  private loadLocalStorage():void{
+
+    if(!localStorage.getItem('history')) return;
+    this._tagsHistory = JSON.parse(localStorage.getItem('history')!) //se pasa de 1(string) a un arreglo de strings[]
+
+    if(this._tagsHistory.length === 0) return;
+    this.searchTag(this.tagsHistory[0]); //para que se carguen los gifs del primer tag del historial
+
+  }
+
 
   searchTag(tag:string):void {
     this.organizeHistory(tag);
