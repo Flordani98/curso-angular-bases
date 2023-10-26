@@ -1,0 +1,10 @@
+<input 
+    type="text" 
+    [placeholder]="placeholder" 
+    class="form-control"
+    (keyup.enter)="onValuee()"
+    #txtSearchInput 
+><!--·txtSearchInput: es un marcador o referencia local del elemento, en este caso el input, para no tener q 
+hacerlo manejando el DOM-->
+<!--otra manera de pasar al metodo onValuee(por parametro), sin usar el view child, el valor del input:
+(keyup.enter)="onValue(txtSearchInput.value)"-->

@@ -22,6 +22,10 @@ const routes: Routes = [
         path: 'by/:id', //*de esta manera, pedimos de manera dinamica un argumento, q se va a llamar id
         //*el countryPage va a recibir el argumento dinamico
         component: CountryPageComponent
+    },
+    {
+        path: '**', //*comodin: para cualquier otra ruta que no este definida en mi router
+        redirectTo: 'by-capital'//se redirecciona el path home
     }
 ]
 

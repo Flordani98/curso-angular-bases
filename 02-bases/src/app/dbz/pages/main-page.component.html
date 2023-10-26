@@ -14,7 +14,10 @@
         <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character> <!--emito un evento desde el hijo al padre
         cuando el component addcharacter me devuelva un personaje yo tengo que insertarlo en el main page .ts, q es
     donde se encuentran todos los personajes
-    $event: para recibir un objeto-->
+    $event: para recibir un objeto
+    ** (OnNewCharacter): es una propiedad de AddCharacter(HIJO) que EMITE un EVENTO, con el decorador OUTPUT.
+    **="onNewCharacter": es un metodo del MAIN-PAGE (PADRE) q RECIBIO un CHARACTER indicado por el $event
+    -->
      
     </div>
 </div>
