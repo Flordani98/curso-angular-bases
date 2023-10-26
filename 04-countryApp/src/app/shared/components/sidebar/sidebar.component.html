@@ -1,0 +1,35 @@
+<h2>Paises</h2>
+<hr>
+
+<ul class="list-group"> <!--para que el elemento LI reconozca al ROUTERLINK tengo q IMPORTAR el RouterModule en 
+    sharedModule, ya que es un modulo aparte el cual no reconoce aun el Routing module
+
+    *routerLinkActive: Cuando el URL de routerLInk esta actualmente puesto en el navegador, entonces se va a
+    aplicar la siguiente clase (valor de la propiedad), en este caso "active"
+
+    *queremos que exactamente q cuando la ruta sea vacia "", se active el elemento, entonces utilizamos el:
+    *routerLinkActiveOptions=" exact: true": podemos mandar un objeto el cual tiene varias propiedades u opciones
+    para configurar, entre ellas esta el exact,  esto le va a decir que tiene q ser exactamente el path con sus
+    segmentos, como este definido ahi, cualquier otra cosa que ya no cumpla sintacticamente entonces no se 
+    va aplicar
+-->
+    
+    <li 
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true}"
+    class="list-group-item">
+        Home Page
+    </li>
+    <li routerLink="about" 
+    routerLinkActive="active"
+    class="list-group-item">
+        About Page
+    </li>
+    <li routerLink="contact" 
+    routerLinkActive="active"
+    class="list-group-item">
+        Contact Page
+    </li>
+
+</ul>
