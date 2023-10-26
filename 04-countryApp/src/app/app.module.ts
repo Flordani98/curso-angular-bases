@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent
   ],
   imports: [
-    AppRoutingModule, //*Importamos el modulo de routing
+    AppRoutingModule, //*Importamos el modulo de routing root
     BrowserModule,
     SharedModule
   ],
